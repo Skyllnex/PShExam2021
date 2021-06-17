@@ -23,6 +23,14 @@ export class StatService {
     getAll(): Promise<Array<Stat>> {
         return getCustomRepository(StatRepository).findAll();
     }
+
+    getHighscores(): Promise<Array<Stat>> {
+        return getCustomRepository(StatRepository).getHighscores();
+    }
+
+    getLastGenerated(): Promise<Stat>{
+        return getCustomRepository(StatRepository).getLastGeneratedStat();
+    }
 }
 
 export default new StatService();

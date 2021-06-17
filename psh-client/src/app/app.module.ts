@@ -1,14 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { HighscoresComponent } from './components/highscores/highscores.component';
+import { CsvExportComponent } from './components/csv-export/csv-export.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HighscoresComponent,
+    CsvExportComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

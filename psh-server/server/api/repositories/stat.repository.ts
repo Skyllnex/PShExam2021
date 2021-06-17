@@ -41,4 +41,25 @@ export class StatRepository extends AbstractRepository<Stat> {
     findAll = (): Promise<Array<Stat>> => {
         return this.repository.find();
     }
+
+    getHighscores = (): Promise<Array<Stat>> => {
+        return this.repository.find(
+        {
+            relations: ["player", "game"],
+            order: {
+                score: 'DESC'
+            },
+            skip: 0,
+            take: 10
+        });
+    }
+
+    getLastGeneratedStat = (): Promise<Stat> => {
+        return this.repository.findOne(
+        {
+            order: {
+                created_at: 'DESC'
+            }
+        });
+    } 
 }

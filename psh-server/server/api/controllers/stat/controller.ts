@@ -51,6 +51,18 @@ export class Controller {
             .then(r => res.json(r))
             .catch(err => res.status(ResponseCode.InternalServerError).end());
     }
+
+    getHighscores(req: Request, res: Response): void {
+        StatService.getHighscores()
+            .then(r => res.json(r))
+            .catch(err => res.status(ResponseCode.InternalServerError).end());
+    }
+
+    getLastGenerated(req: Request, res: Response): void {
+        StatService.getLastGenerated()
+            .then(r => res.json(r))
+            .catch(err => res.status(ResponseCode.InternalServerError).end());
+    }
 }
 
 export default new Controller();

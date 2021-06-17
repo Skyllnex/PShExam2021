@@ -9,7 +9,7 @@ export class Stat {
     @Column()
     score: number;
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
-    public created_at: Date;
+    created_at: Date;
 
     @ManyToOne(() => Player, player => player.stats)
     player: Player;

@@ -41,5 +41,4 @@ export class GameRepository extends AbstractRepository<Game> {
     findAll = (): Promise<Array<Game>> => {
         return this.repository.find();
     }
-
 }

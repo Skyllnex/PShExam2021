@@ -1,0 +1,11 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "USER",
+  "password": "PASS",
+  "database": "pshdb",
+  "synchronize": true,
+  "entities": ["./server/api/models/*{.ts,.js}"],
+  "logging": false
+}
